@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import '~mat-sidenav-menu/mat-sidenav-menu-theme.scss';
+/*//@include side-nav-menu-theme($demo-app-theme);*/
+
+html, body, app-root, .app-frame {
+  overflow: hidden;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+  /*color: #e0e0e0;*/
+}
+
