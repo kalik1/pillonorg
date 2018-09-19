@@ -1,0 +1,36 @@
+.container.guestbook-container {
+  padding-top: 30px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow: auto;
+}
+
+/*.guestbook-container h1 {*/
+/*padding-left: 180px;*/
+/*}*/
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+#content{
+min-height: 100px;
+}
+
+.thumb1 {
+  background: url(https://material.angular.io/assets/img/examples/shiba2.jpg) 100% 15% no-repeat; /* 50% 50% centers image in div */
+  background-size: cover;
+  width: 100%;
+  margin-left: -24px;
+  margin-right: -24px;
+  height: 100px;
+}
+

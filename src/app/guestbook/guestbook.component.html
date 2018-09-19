@@ -1,0 +1,67 @@
+<div class="container guestbook-container"  >
+  <div class="row">
+    <div class="col-md-6">
+      <h1>GuestBook</h1>
+      <h3>Leave a Sign</h3>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-6" style="padding: 0.5em;">
+      <form [formGroup]="guestbookForm" (ngSubmit)="onFormSubmit()">
+        <div class="example-container">
+
+          <mat-form-field>
+            <input matInput placeholder="Name" formControlName="author" type="text" class="form-control" id="author" required>
+            <mat-error *ngIf="guestbookForm.get('author').invalid && guestbookForm.get('author').dirty">Name Is Required...</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Title" formControlName="title" type="text" class="form-control" id="title" required>
+            <mat-error *ngIf="guestbookForm.get('title').invalid && guestbookForm.get('title').dirty">Title Is Required...</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="authorEmail" type="email" class="form-control" id="authorEmail">
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <textarea matInput placeholder="Content" formControlName="content" type="text" class="form-control" id="content" required></textarea>
+            <mat-error *ngIf="guestbookForm.get('content').invalid && guestbookForm.get('content').dirty">Insert Something....</mat-error>
+          </mat-form-field>
+
+
+
+        </div>
+        <button mat-button [disabled]="guestbookForm.invalid">SUBMIT</button>
+      </form>
+
+    </div>
+  </div>
+  <mat-divider style="padding-top: 20px; margin-top: 50px;"></mat-divider>
+
+  <div class="row" *ngFor="let item of guestbooks" style="padding-top: 30px">
+    <div class="col-md-12">
+      <mat-card class="example-card" >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{item.title}} {{item.date | date:'medium'}}</mat-card-title>
+          <mat-card-subtitle>{{item.author}}
+            <span *ngIf="item.authorEmail">({{item.authorEmail}})</span>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <!--<div class="thumb1"></div>-->
+        <mat-card-content>
+          <p>
+            {{item.content}}
+          </p>
+        </mat-card-content>
+        <!--<mat-card-actions>-->
+          <!--<button mat-button>LIKE</button>-->
+          <!--<button mat-button>SHARE</button>-->
+        <!--</mat-card-actions>-->
+      </mat-card>
+    </div>
+  </div>
+</div>
+
